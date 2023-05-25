@@ -22,6 +22,7 @@ void (*get_right_func())(stack_t**, unsigned int)
 	content = malloc(strlen(data) + 1);
 	strcpy(content, data);
 	token = strtok(content, " ");
+	free(content);
 	if (strcmp(token, "nop") == 0)
 		exit(EXIT_SUCCESS);
 	for (i = 0; instruction[i].opcode; i++)

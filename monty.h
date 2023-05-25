@@ -52,5 +52,6 @@ void pint_stack(stack_t**, unsigned int);
 void pop_stack(stack_t**, unsigned int);
 void swap_stack(stack_t**, unsigned int);
 void add_stack(stack_t**, unsigned int);
+void free_stack(stack_t*);
 
 #endif

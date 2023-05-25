@@ -35,5 +35,24 @@ int main(int argc, char *argv[])
 		func = get_right_func();
 		func(&stack, line_number);
 	}
+	free(stack);
 	return (0);
+}
+
+/**
+ * free_stack - free the stack linked list.
+ * @stack: linked list to be freed.
+ *
+ * Return: nothing.
+ */
+void free_stack(stack_t *stack)
+{
+	stack_t *tmp = stack;
+
+	while(stack != NULL)
+	{
+		stack = stack->next;
+		free(tmp);
+		tmp = stack;
+	}
 }

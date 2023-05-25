@@ -34,17 +34,30 @@ void push_item(stack_t **stack, unsigned int line_number)
 	int n;
 
 	content = malloc(strlen(data) + 1);
+	if (content == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	strcpy(content, data);
 	token1 = strtok(content, " ");
 	token1 = strtok(NULL, " ");
+	free(content);
 	if (!is_num(token1))
 	{
+		free(content);
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(token1);
 
 	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+        {
+		free(content);
+                fprintf(stderr, "Error: malloc failed\n");
+                exit(EXIT_FAILURE);
+        }
 	new->prev = NULL;
 	new->n = n;
 	new->next = NULL;
