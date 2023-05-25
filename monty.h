@@ -9,7 +9,7 @@
 
 #define SIZE 64
 
-char data[SIZE];
+extern char data[SIZE];
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

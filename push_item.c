@@ -1,5 +1,6 @@
 #include "monty.h"
 
+int data[SIZE];
 /**
  * is_num - check if given char is a number or not.
  * @token: the string to be checked.
