@@ -49,6 +49,11 @@ void no_match(stack_t**, unsigned int);
 void pint_stack(stack_t**, unsigned int);
 void pop_stack(stack_t**, unsigned int);
 void swap_stack(stack_t**, unsigned int);
-void add_stack(stack_t**, unsigned int);
 void free_stack(stack_t *);
+void nop_skip(stack_t**, unsigned int);
+void add_stack(stack_t**, unsigned int);
+void sub_stack(stack_t**, unsigned int);
+void mul_stack(stack_t**, unsigned int);
+void div_stack(stack_t**, unsigned int);
+void mod_stack(stack_t**, unsigned int);
 #endif
