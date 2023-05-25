@@ -8,7 +8,7 @@
  */
 int is_num(char *token)
 {
-	size_t i = 0;
+	int i = 0;
 
 	while (token[i])
 	{
@@ -30,31 +30,22 @@ int is_num(char *token)
 void push_item(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
-	char *token1, *content;
+	char *token;
 	int n;
 
-	content = malloc(strlen(data) + 1);
-	if (content == NULL)
+	token = strtok(data, " \t\n");
+	token = strtok(NULL, " \t\n");
+	if (!is_num(token) || token == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-	strcpy(content, data);
-	token1 = strtok(content, " \t\n");
-	token1 = strtok(NULL, " \t\n");
-	free(content);
-	if (!is_num(token1))
-	{
-		free(content);
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	n = atoi(token1);
+	n = atoi(token);
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		free(content);
 		fprintf(stderr, "Error: malloc failed\n");
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	new->prev = NULL;

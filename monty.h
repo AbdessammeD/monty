@@ -6,12 +6,10 @@
 #include <string.h>
 #include <sys/types.h>
 #include <ctype.h>
+
 #define SIZE 64
 
-/**
- * @data: global variable.
- */
-char data[64];
+char data[SIZE];
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -52,6 +50,5 @@ void pint_stack(stack_t**, unsigned int);
 void pop_stack(stack_t**, unsigned int);
 void swap_stack(stack_t**, unsigned int);
 void add_stack(stack_t**, unsigned int);
-void free_stack(stack_t*);
-
+void free_stack(stack_t *);
 #endif

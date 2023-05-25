@@ -17,12 +17,10 @@ void (*get_right_func())(stack_t**, unsigned int)
 		{NULL, NULL}
 	};
 	int i = 0;
-	char *token, *content;
+	char *token, data_copy[SIZE];
 
-	content = malloc(strlen(data) + 1);
-	strcpy(content, data);
-	token = strtok(content, " \t\n");
-	free(content);
+	strcpy(data_copy, data);
+	token = strtok(data_copy, " \t\n");
 	if (strcmp(token, "nop") == 0)
 		exit(EXIT_SUCCESS);
 	for (i = 0; instruction[i].opcode; i++)

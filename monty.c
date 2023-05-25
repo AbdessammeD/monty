@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
 	void (*func)(stack_t**, unsigned int);
 	FILE *file;
 	unsigned int line_number = 0;
-	size_t newline_pos;
 
 	if (argc != 2)
 	{
@@ -45,12 +44,12 @@ int main(int argc, char *argv[])
  */
 void free_stack(stack_t *stack)
 {
-	stack_t *tmp = stack;
+	stack_t *tmp;
 
 	while (stack != NULL)
 	{
+		tmp = stack;
 		stack = stack->next;
 		free(tmp);
-		tmp = stack;
 	}
 }
