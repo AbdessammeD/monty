@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int data[SIZE];
+char data[SIZE];
 /**
  * main - the main program for the monty bytecode interpreter.
  * @argc: numbe rof argument passed to the interpreter.

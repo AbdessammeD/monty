@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int data[SIZE];
+char data[SIZE];
 /**
  * get_right_func - return the right function.
  *
