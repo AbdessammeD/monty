@@ -21,7 +21,7 @@ void add_stack(stack_t **stack, unsigned int line_number)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-		free_stack(stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *stack;
@@ -51,7 +51,7 @@ void sub_stack(stack_t **stack, unsigned int line_number)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-		free_stack(stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *stack;
@@ -82,7 +82,7 @@ void mul_stack(stack_t **stack, unsigned int line_number)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
-		free_stack(stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *stack;
@@ -113,7 +113,7 @@ void div_stack(stack_t **stack, unsigned int line_number)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
-		free_stack(stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n == 0)
@@ -149,7 +149,7 @@ void mod_stack(stack_t **stack, unsigned int line_number)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
-		free_stack(stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n == 0)
