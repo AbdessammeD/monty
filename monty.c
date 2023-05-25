@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		func(&stack, line_number);
 	}
 	fclose(file);
-	free(stack);
+	free_stack(stack);
 	return (0);
 }
 
