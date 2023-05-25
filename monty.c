@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		func = get_right_func();
+		if (func == NULL)
+			continue;
 		func(&stack, line_number);
 	}
 	fclose(file);

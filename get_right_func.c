@@ -27,6 +27,8 @@ void (*get_right_func())(stack_t**, unsigned int)
 
 	strcpy(data_copy, data);
 	token = strtok(data_copy, " \t\n");
+	if (token[0] == '#')
+		return (NULL);
 	for (i = 0; instruction[i].opcode; i++)
 		if (strcmp(instruction[i].opcode, token) == 0)
 			return (instruction[i].f);
