@@ -50,18 +50,16 @@ void push_item(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(token1);
-
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-        {
+	{
 		free(content);
-                fprintf(stderr, "Error: malloc failed\n");
-                exit(EXIT_FAILURE);
-        }
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	new->prev = NULL;
 	new->n = n;
 	new->next = NULL;
-
 	if (*stack == NULL)
 		*stack = new;
 	else
