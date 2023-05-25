@@ -12,7 +12,6 @@ void add_stack(stack_t **stack, unsigned int line_number)
 	int len = 0;
 	stack_t *tmp = *stack;
 
-	check_no_args(*stack, line_number);
 	while (tmp != NULL)
 	{
 		len++;
@@ -42,7 +41,6 @@ void sub_stack(stack_t **stack, unsigned int line_number)
 	int len = 0;
 	stack_t *tmp = *stack;
 
-	check_no_args(*stack, line_number);
 	while (tmp != NULL)
 	{
 		len++;
@@ -73,7 +71,6 @@ void mul_stack(stack_t **stack, unsigned int line_number)
 	int len = 0;
 	stack_t *tmp = *stack;
 
-	check_no_args(*stack, line_number);
 	while (tmp != NULL)
 	{
 		len++;
@@ -104,7 +101,6 @@ void div_stack(stack_t **stack, unsigned int line_number)
 	int len = 0;
 	stack_t *tmp = *stack;
 
-	check_no_args(*stack, line_number);
 	while (tmp != NULL)
 	{
 		len++;
@@ -140,7 +136,6 @@ void mod_stack(stack_t **stack, unsigned int line_number)
 	int len = 0;
 	stack_t *tmp = *stack;
 
-	check_no_args(*stack, line_number);
 	while (tmp != NULL)
 	{
 		len++;

@@ -12,7 +12,6 @@ void swap_stack(stack_t **stack, unsigned int line_number)
 	int len = 0, val;
 	stack_t *tmp = *stack;
 
-	check_no_args(*stack, line_number);
 	while (tmp != NULL)
 	{
 		len++;
