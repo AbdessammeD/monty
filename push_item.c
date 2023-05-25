@@ -11,6 +11,9 @@ int is_num(char *token)
 {
 	int i = 0;
 
+	if (token == NULL)
+		return (0);
+
 	while (token[i])
 	{
 		if (token[i] < 48 || token[i] > 57)
@@ -31,12 +34,13 @@ int is_num(char *token)
 void push_item(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
-	char *token;
+	char *token, data_copy[SIZE];
 	int n;
 
-	token = strtok(data, " \t\n");
+	strcpy(data_copy, data);
+	token = strtok(data_copy, " \t\n");
 	token = strtok(NULL, " \t\n");
-	if (!is_num(token) || token == NULL)
+	if (token == NULL || !is_num(token) || strtok(NULL, " \t\n"))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

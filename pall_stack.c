@@ -13,6 +13,7 @@ void pall_stack(stack_t **stack, unsigned int line_number)
 
 	(void) line_number;
 
+	check_no_args(*stack, line_number);
 	if (*stack == NULL)
 		return;
 
