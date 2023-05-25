@@ -56,5 +56,5 @@ void sub_stack(stack_t**, unsigned int);
 void mul_stack(stack_t**, unsigned int);
 void div_stack(stack_t**, unsigned int);
 void mod_stack(stack_t**, unsigned int);
-void check_no_args(stack_t*, unsigned int);
+
 #endif
