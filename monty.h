@@ -5,8 +5,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <ctype.h>
+#define SIZE 64
 
-char *data;
+/**
+ * @data: global variable.
+ */
+char data[64];
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

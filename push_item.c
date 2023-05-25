@@ -8,7 +8,7 @@
  */
 int is_num(char *token)
 {
-	int i = 0;
+	size_t i = 0;
 
 	while (token[i])
 	{
@@ -18,6 +18,8 @@ int is_num(char *token)
 	}
 	return (1);
 }
+
+
 /**
  * push_item - push the item to the stack.
  * @stack: stack linked list.
@@ -31,7 +33,8 @@ void push_item(stack_t **stack, unsigned int line_number)
 	char *token1, *content;
 	int n;
 
-	content = strdup(data);
+	content = malloc(strlen(data) + 1);
+	strcpy(content, data);
 	token1 = strtok(content, " ");
 	token1 = strtok(NULL, " ");
 	if (!is_num(token1))
