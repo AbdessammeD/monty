@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 		func = get_right_func();
 		func(&stack, line_number);
 	}
+	fclose(file);
 	free(stack);
 	return (0);
 }
