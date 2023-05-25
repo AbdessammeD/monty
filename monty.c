@@ -28,9 +28,6 @@ int main(int argc, char *argv[])
 	}
 	while (fgets(data, sizeof(data), file) != NULL)
 	{
-		newline_pos = strcspn(data, "\n");
-		if (newline_pos < strlen(data))
-			data[newline_pos] = '\0';
 		line_number++;
 		func = get_right_func();
 		func(&stack, line_number);

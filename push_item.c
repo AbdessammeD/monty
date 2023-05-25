@@ -40,8 +40,8 @@ void push_item(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	strcpy(content, data);
-	token1 = strtok(content, " ");
-	token1 = strtok(NULL, " ");
+	token1 = strtok(content, " \t\n");
+	token1 = strtok(NULL, " \t\n");
 	free(content);
 	if (!is_num(token1))
 	{
