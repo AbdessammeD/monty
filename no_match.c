@@ -12,5 +12,6 @@ void no_match(stack_t **stack, unsigned int line_number)
 	(void) stack;
 
 	fprintf(stderr, "L%d: unknown instruction <opcode>\n", line_number);
+	free_stack(*stack);
 	exit(EXIT_FAILURE);
 }

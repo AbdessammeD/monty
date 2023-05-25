@@ -36,15 +36,15 @@ int is_num(char *token)
 void push_item(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
-	char *token, data_copy[SIZE];
+	char *token;
 	int n;
 
-	strcpy(data_copy, data);
-	token = strtok(data_copy, " \t\n");
+	token = strtok(data, " \t\n");
 	token = strtok(NULL, " \t\n");
 	if (token == NULL || !is_num(token))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(token);
